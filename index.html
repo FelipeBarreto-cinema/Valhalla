@@ -61,6 +61,25 @@ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
       
       
       <style>
+      .flag-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.flag-btn img {
+    width: 26px; 
+    height: auto;
+    border-radius: 3px; /* opcional, deixa mais bonito */
+    transition: transform 0.2s ease;
+}
+
+.flag-btn:hover img {
+    transform: scale(1.12);
+}
+      
       /* Oculta o seletor do Google */
 #google_translate_element {
     display: none !important;
@@ -105,12 +124,12 @@ body {
               </div>
             </li>
 	        <li class="nav-item">
-            <button onclick="translatePage('en')">🇺🇸 EN</button>
+            <button class="flag-btn" onclick="translatePage('en')">🇺🇸 EN</button>
             
           </li>
 	          <li class="nav-item cart"> 
               
-<button onclick="translatePage('es')">🇪🇸 ES</button>
+<button class="flag-btn" onclick="translatePage('es')">🇪🇸 ES</button>
             </li>
 	        </ul>
 	      </div>
