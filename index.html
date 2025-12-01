@@ -1,146 +1,857 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Valhalla Tour — Em construção</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Valhalla Journey -  Arraial do Cabo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-  <!-- Tentativa de carregar a fonte 'Norse'.
-       Se você tiver o arquivo .woff2, coloque em ./fonts/Norse.woff2
-       Caso contrário, a página usará uma alternativa serif elegante. -->
-  <style>
-    @font-face {
-      font-family: 'Norse';
-      src: url('./fonts/Norse.woff2') format('woff2');
-      font-weight: 400 700;
-      font-style: normal;
-      font-display: swap;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
 
-    :root{
-      --bg: #15131e; /* fundo escuro do cartão */
-      --accent: #F2780C; /* magenta profundo recomendado */
-      --accent-bright: #f4f4f4; /* magenta claro para realces */
-      --white: #FFFFFF;
-      --glass: rgba(255,255,255,0.04);
-    }
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: radial-gradient(1200px 800px at 10% 20%, rgba(139,0,139,0.06), transparent 10%),
-                  radial-gradient(900px 600px at 90% 80%, rgba(255,102,255,0.03), transparent 10%),
-                  var(--bg);
-      color:var(--white);
-      font-family: 'Norse', Georgia, 'Times New Roman', serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
-    }
+    <link rel="stylesheet" href="css/aos.css">
 
-    /* Container central */
-    .wrap{
-      width:100%;
-      max-width:980px;
-      background: #07090D;
-      border-radius:18px;
-      padding:48px 32px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      border:1px solid rgba(255,255,255,0.03);
-    }
+    <link rel="stylesheet" href="css/ionicons.min.css">
 
-    /* Logo central */
-    .logo-wrap{
-      width:220px;
-      height:220px;
-      min-width:140px;
-      min-height:140px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background: linear-gradient(135deg, rgba(139,0,139,0.12), rgba(255,102,255,0.06));
-      border: 4px solid transparent;
-      position:relative;
-      padding:12px;
-    }
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    .logo-wrap::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      padding:4px;
-      background: conic-gradient(from 200deg at 50% 50%, var(--accent), var(--accent-bright));
-      -webkit-mask: radial-gradient(circle at center, black 60%, transparent 61%);
-      mask: radial-gradient(circle at center, black 60%, transparent 61%);
-      opacity:0.95;
-      z-index:0;
-      filter:blur(6px);
-    }
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html"><img  class="img-fluid" src="images/Logo.png" ></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="roteiro.html" class="nav-link">Roteiro</a></li>
+	          <li class="nav-item"><a href="quem-somos.html" class="nav-link">Quem Somos</a></li>
+	         <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>-->
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="index.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Passeios</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+             
+                <a class="dropdown-item" href="passeio-de-barco-exclusivo.html">Exclusivo</a>
+                <a class="dropdown-item" href="passeio-de-barco-coletivo.html">Coletivo</a>
+                <a class="dropdown-item" href="passeio-de-barco-taxi.html">Barco Taxi</a>
+              </div>
+            </li>
+	        <!--  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>-->
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>
+    <!-- END nav -->
 
-    .logo{
-      width:84%;
-      height:84%;
-      z-index:1;
-      object-fit:contain;
-      border-radius:50%;
-      background: transparent;
-    }
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
-    /* Texto "Em construção..." */
-    h1{
-      margin:0;
-      font-size:clamp(20px, 3.6vw, 36px);
-      letter-spacing:1px;
-      text-align:center;
-      color:var(--accent-bright);
-      text-shadow: 0 6px 18px rgba(139,0,139,0.18);
-      line-height:1.05;
-    }
+            <div style="border: 2px solid #c39b62; border-radius: 14px; background: rgba(0, 0, 0, 0.55); padding: 12px 18px; backdrop-filter: blur(2px);" class="col-md-8 col-sm-12 text-center ftco-animate">
+            	<span class="subheading">Bem Vindos!</span>
+              <h1 class="mb-4">Ao Valhalla Journey</h1>
+              <p class="mb-4 mb-md-5">Uma jornada viking pelas águas sagradas de Arraial do Cabo.</p>
+              <p><a href="https://wa.me/5522998527317?text=%F0%9F%8C%8A%20%E2%80%9COs%20mares%20murmuraram%20hoje%E2%80%A6%0AE%20acho%20que%20fui%20eu%20quem%20ouvi%20o%20chamado.%0A%0AQuero%20saber%20mais%20sobre%20a%20jornada%20do%20Valhalla%20Journey!%0AEstou%20pensando%20sobre%20qual%20caminho%20seguir%20nessa%20aventura%E2%80%A6%20e%20j%C3%A1%20estou%20pronto(a)%20pra%20escolher%3A%0A%0A%E2%9A%94%EF%B8%8F%20Passeio%20Exclusivo%0A%E2%9A%94%EF%B8%8F%20Passeio%20Coletivo%0A%E2%9A%94%EF%B8%8F%20Ou%20informa%C3%A7%C3%B5es%20sobre%20o%20Barco%20T%C3%A1xi
+" class="btn btn-primary p-3 px-xl-4 py-xl-3">Reserve Agora!</a></p>
+            </div>
 
-    p.lead{
-      margin:0;
-      font-size:clamp(12px, 1.6vw, 16px);
-      color:rgba(255,255,255,0.72);
-      text-align:center;
-      max-width:680px;
-    }
+          </div>
+        </div>
+      </div>
 
-    /* Rodapé discreto */
-    footer{
-      margin-top:8px;
-      font-size:12px;
-      color:rgba(255,255,255,0.22);
-      text-align:center;
-    }
+      
+    </section>
 
-    /* Responsividade */
-    @media (max-width:520px){
-      .wrap{padding:28px 18px; gap:18px}
-      .logo-wrap{width:160px;height:160px}
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap" role="main">
-    <div class="logo-wrap" aria-hidden="true">
-      <!-- coloque o arquivo logo.png na mesma pasta deste HTML -->
-      <img src="./logo-valhalla.png" alt="Valhalla Tour - logo" class="logo" />
-    </div>
 
-    <h1>Em construção...</h1>
+    <section class="ftco-about d-md-flex">
+    	<div class="one-half img" style="background-image: url(images/about.jpg);"></div>
+    	<div class="one-half ftco-animate">
+    		<div class="overlap">
+	        <div class="heading-section ftco-animate ">
+	        	<span class="subheading">Faça parte</span>
+	          <h2 class="mb-4">da Nossa História</h2>
+	        </div>
+	        <div>
+	  				<p style="color:#c39b62">Desde as primeiras travessias pelas águas de Arraial do Cabo, o Valhalla Tour nasceu com um propósito: transformar cada passeio em uma lembrança eterna.
+Inspirados pela coragem dos antigos vikings, navegamos com o coração voltado ao mar e à liberdade.
+Cada visitante que embarca conosco se torna parte dessa saga — feita de sorrisos, descobertas e o azul mais intenso do Brasil.
 
-    <p class="lead">Breve, a travessia começa. Prepare-se para navegar por Arraial do Cabo com a experiência Valhalla.</p>
+Viva o mar. Sinta o vento. Faça parte da nossa história..</p>
+	  			</div>
+  			</div>
+    	</div>
+    </section>
 
-    <footer>Valhalla Tour • Arraial do Cabo</footer>
-  </main>
-</body>
+    <section class="ftco-section ftco-services">
+    	<div class="container">
+    		<div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="media d-block text-center block-6 services">
+              <div class="icon d-flex justify-content-center align-items-center mb-5">
+              	<span > 	<img style="width: auto;height: auto;max-width: 100%; min-height: 100%; padding: 20px;" src="images/navio-viking.png"/></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Passeio Exclusivo</h3>
+                <p>Para aqueles que desejam navegar como um verdadeiro Jarl.
+Um barco inteiro à sua disposição, seguindo apenas o seu comando. Escolha o rumo, o ritmo e o silêncio das águas — uma travessia reservada, digna dos líderes que cruzavam mares em busca de novos horizontes.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="media d-block text-center block-6 services">
+              <div class="icon d-flex justify-content-center align-items-center mb-5">
+              	<span ><img style="width: auto;height: auto;max-width: 100%; min-height: 100%; padding: 20px;" src="images/navio-viking.png"/> </span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Passeio Coletivo</h3>
+                <p>A jornada dos clãs que navegam juntos.
+Embarque ao lado de outros viajantes e compartilhe a travessia pelas águas sagradas de Arraial do Cabo. Assim como nas frotas vikings, cada pessoa soma força, histórias e boa energia enquanto seguimos pelo mar azul-cristal.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="media d-block text-center block-6 services">
+              <div class="icon d-flex justify-content-center align-items-center mb-5">
+              	<span ><img style="width: auto;height: auto;max-width: 100%; min-height: 100%; padding: 20px;" src="images/navio-viking.png"/></span></div>
+              <div class="media-body">
+                <h3 class="heading">Barco Taxi</h3>
+                <p>A rota rápida dos mensageiros do mar.
+Viaje como os exploradores que se moviam ágeis entre as praias e enseadas. Um trajeto veloz e seguro até a Praia do Forno e as Prainhas do Pontal, levando você direto ao paraíso sem batalhas, trilhas ou longas caminhadas.</p>
+              </div>
+            </div>    
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row align-items-center">
+    			<div class="col-md-6 pr-md-5">
+    				<div class="heading-section text-md-right ftco-animate">
+	          	<span class="subheading">Saboreie</span>
+	            <h2 class="mb-4">A FORJA DE ASGARD</h2>
+	            <p style="color:#c39b62" class="mb-4">Espetos forjados no calor da chapa, como nos festins dos guerreiros de Asgard.
+Carne, coração, queijo coalho, frango e pão de alho preparados com poder e sabor digno do Deus do Trovão.</p>
+	           <!-- <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>-->
+	          </div>
+    			</div>
+    			<div class="col-md-6">
+    				<div class="row">
+    					<div class="col-md-6">
+    						<div class="menu-entry mt-lg-4">
+		    					<a href="#" class="img" style="background-image: url(images/espetinho-qualho.jpg);"></a>
+		    				</div>
+    					</div>
+						
+    					<div class="col-md-6">
+    						<div class="menu-entry mt-lg-4">
+		    					<a href="#" class="img" style="background-image: url(images/pao-de-alho.jpg);"></a>
+		    				</div>
+    					</div>
+						<!--
+    					<div class="col-md-6">
+    						<div class="menu-entry  mt-lg-4">
+		    					<a href="#" class="img" style="background-image: url(images/espetinho-frango.jpg);"></a>
+		    				</div>
+    					</div>
+    					<div class="col-md-6">
+    						<div class="menu-entry mt-lg-4">
+		    					<a href="#" class="img" style="background-image: url(images/pao-de-alho.jpg);"></a>
+		    				</div>
+    					</div>
+						-->
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+<!--
+    <section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="row">
+		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<strong class="number" data-number="100">0</strong>
+		              	<span>Coffee Branches</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<strong class="number" data-number="85">0</strong>
+		              	<span>Number of Awards</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<strong class="number" data-number="10567">0</strong>
+		              	<span>Happy Customer</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		              	<div class="icon"><span class="flaticon-coffee-cup"></span></div>
+		              	<strong class="number" data-number="900">0</strong>
+		              	<span>Staff</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+        </div>
+      </div>
+    </section>
+-->
+
+<style>
+/* --- MODAL VIKING --- */
+.modal-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  cursor: zoom-out;
+  backdrop-filter: blur(3px);
+
+  /* impede scroll da página ao abrir o modal */
+  overflow: hidden;
+}
+
+/* IMAGEM COM BORDA VIKING */
+.modal-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid #c39b62;   /* borda dourada */
+  border-radius: 16px;         /* arredondado bonito */
+  box-shadow:
+    0 0 25px rgba(195,155,98,0.8),
+    0 0 60px rgba(0,0,0,0.9);
+  animation: valhallaFade 0.25s ease-out;
+}
+
+/* animação */
+@keyframes valhallaFade {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+</style>
+
+<script>
+document.addEventListener("click", function(e){
+
+  const item = e.target.closest(".gallery-item");
+  if (!item) return;
+
+  // pegar o background-image: url("…")
+  const bg = item.style.backgroundImage;
+  const url = bg.slice(5, -2); // remove url(" ")
+
+  // criar modal
+  const modal = document.createElement("div");
+  modal.classList.add("modal-viewer");
+
+  // criar a imagem real
+  const img = document.createElement("img");
+  img.src = url;
+
+  modal.appendChild(img);
+  document.body.appendChild(modal);
+
+  // impedir que a página role para o topo
+  const scrollPos = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollPos}px`;
+
+  // fechar modal
+  modal.addEventListener("click", () => {
+    modal.remove();
+    
+    // restaurar scroll exatamente onde estava
+    document.body.style.position = "";
+    document.body.style.top = "";
+    window.scrollTo(0, scrollPos);
+  });
+});
+</script>
+
+
+
+
+	 <section class="ftco-gallery">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center gallery-item" style="background-image: url(images/gallery-1.jpg);">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center gallery-item" style="background-image: url(images/gallery-2.jpg);">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center gallery-item" style="background-image: url(images/gallery-4.jpg);">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center gallery-item" style="background-image: url(images/gallery-3.jpg);">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+        </div>
+    	</div>
+    </section>
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+          	<span class="subheading">Hidroméis do Mar</span>
+            <h2 class="mb-4">A Força dos Deuses em Cada Gole</h2>
+            <p style="color:#c39b62">Durante o passeio, nossos drinks são preparados como nas antigas festas nórdicas: fortes, intensos e feitos para celebrar a vida. Cada gole traz o espírito das longas travessias — bebidas que aquecem, revigoram e fazem qualquer guerreiro ou shieldmaiden brindar como se estivesse no grande salão de Valhalla.</p>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Caipirinhas - As Três Poções de Valhalla</a></h3>
+    						<p style="color:#c39b62">As poções despertam o espírito dos viajantes que vivem do oceano.
+Cada poção guarda a essência de um deus, um sabor e um destino:</p>
+    						<p class="price"><span>A Bênção de Thor(Limão)<br>
+							O Encanto de Freyja(Morango)<br>
+							O Rugido de Jörmungandr(Maracujá)<br>
+						</span></p>
+    						
+    					</div>
+    				</div>
+        	</div>
+        	<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Batidas - Amanhecer de Midgard</a></h3>
+    						<p style="color:#c39b62">No reino onde o sol toca primeiro as águas de Midgard, três batidas surgem como oferendas aos viajantes que despertam com a força do mar.</p>
+    						<p class="price"><span>Bruma Escarlate(Morango)<br>
+							Luz de Skadi(Abacaxi)<br>
+						Eco de Fenrir(Maracujá)</span></p>
+    						
+    					</div>
+    				</div>
+        	</div>
+        	
+			<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Cervejas - Direto dos Barris do Ragnarök</a></h3>
+    						<p style="color:#c39b62">Na lendária Taverna de Odin, onde guerreiros celebram suas vitórias e navegadores descansam após longas jornadas, servimos apenas as bebidas dignas do grande salão.
+</p>
+    						<p class="price"><span>Heineken<br>
+							Corona<br>
+						Brahma</span></p>
+    					</div>
+    				</div>
+        	</div>
+			<div class="col-md-3">
+        		<div class="menu-entry">
+    					<a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
+    					<div class="text text-center pt-4">
+    						<h3><a href="#">Néctares da Bifrost</a></h3>
+    						<p style="color:#c39b62">Como a ponte luminosa que une os reinos, nossos néctares gaseificados e sem álcool conectam você às águas azuis de Arraial do Cabo. Cada gole borbulha como a energia da própria Bifrost — leve, fresca e radiante. Uma travessia efervescente que abre caminhos e desperta sentidos. Brinde ao sabor que ilumina.</p>
+    						<p class="price"><span>Coca-cola<br>
+							Coca-cola zero<br>
+							Suco Natural
+							</span></p>
+    					</div>
+    				</div>
+        	</div>
+        	
+        </div>
+    	</div>
+    </section>
+
+  <!-- 
+
+		<section class="ftco-menu">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading">Discover</span>
+            <h2 class="mb-4">Our Products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+    		<div class="row d-md-flex">
+	    		<div class="col-lg-12 ftco-animate p-md-5">
+		    		<div class="row">
+		          <div class="col-md-12 nav-link-wrap mb-5">
+		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
+
+		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
+
+		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex align-items-center">
+		            
+		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+		              	<div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Grilled Beef</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+		                <div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Lemonade Juice</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Pineapple Juice</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Soda Drinks</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+		                <div class="row">
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-1.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-2.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              		<div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-3.jpg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Hot Cake Honey</a></h3>
+		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+		              					<p class="price"><span>$2.90</span></p>
+		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              				</div>
+		              			</div>
+		              		</div>
+		              	</div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"  data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+	    <div class="container">
+	      <div class="row justify-content-center mb-5">
+	        <div class="col-md-7 heading-section text-center ftco-animate">
+	        	<span class="subheading">Testimony</span>
+	          <h2 class="mb-4">Customers Says</h2>
+	          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="container-wrap">
+	      <div class="row d-flex no-gutters">
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_1.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_3.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end">
+	          <div class="testimony overlay">
+	             <blockquote>
+	                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.&rdquo;</p>
+	              </blockquote>
+	              <div class="author d-flex mt-4">
+	                <div class="image mr-3 align-self-center">
+	                  <img src="images/person_2.jpg" alt="">
+	                </div>
+	                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	              </div>
+	          </div>
+	        </div>
+	        <div class="col-lg align-self-sm-end ftco-animate">
+	          <div class="testimony">
+	            <blockquote>
+	              <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
+	            </blockquote>
+	            <div class="author d-flex mt-4">
+	              <div class="image mr-3 align-self-center">
+	                <img src="images/person_3.jpg" alt="">
+	              </div>
+	              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Recent from blog</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry align-self-stretch">
+              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text py-4 d-block">
+              	<div class="meta">
+                  <div><a href="#">Sept 10, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		
+		<section class="ftco-appointment">
+			<div class="overlay"></div>
+    	<div class="container-wrap">
+    		<div class="row no-gutters d-md-flex align-items-center">
+    			<div class="col-md-6 d-flex align-self-stretch">
+    				<div id="map"></div>
+    			</div>
+	    		<div class="col-md-6 appointment ftco-animate">
+	    			<h3 class="mb-3">Book a Table</h3>
+	    			<form action="#" class="appointment-form">
+	    				<div class="d-md-flex">
+		    				<div class="form-group">
+		    					<input type="text" class="form-control" placeholder="First Name">
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<input type="text" class="form-control" placeholder="Last Name">
+		    				</div>
+	    				</div>
+	    				<div class="d-md-flex">
+		    				<div class="form-group">
+		    					<div class="input-wrap">
+		            		<div class="icon"><span class="ion-md-calendar"></span></div>
+		            		<input type="text" class="form-control appointment_date" placeholder="Date">
+	            		</div>
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<div class="input-wrap">
+		            		<div class="icon"><span class="ion-ios-clock"></span></div>
+		            		<input type="text" class="form-control appointment_time" placeholder="Time">
+	            		</div>
+		    				</div>
+		    				<div class="form-group ml-md-4">
+		    					<input type="text" class="form-control" placeholder="Phone">
+		    				</div>
+	    				</div>
+	    				<div class="d-md-flex">
+	    					<div class="form-group">
+		              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+		            </div>
+		            <div class="form-group ml-md-4">
+		              <input type="submit" value="Appointment" class="btn btn-primary py-3 px-4">
+		            </div>
+	    				</div>
+	    			</form>
+	    		</div>    			
+    		</div>
+    	</div>
+    </section>
+-->
+    <footer class="ftco-footer ftco-section img">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">De onde saímos?</h2>
+              <p>Praia Dos Anjos - Arraial do Cabo - RJ</p>
+
+            </div>
+          </div>
+        
+		  <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Vikings Trabalhando</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/unnamed.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Em breve!</a></h3>
+                  <!--<div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+				-->
+                </div>
+              </div>
+              
+            </div>
+          </div>
+      
+		
+		  <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
+             <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Serviços</h2>
+              <ul class="list-unstyled">
+                <li><a href="passeio-de-barco-exclusivo.html" class="py-2 d-block">Passeio Exclusivo</a></li>
+                <li><a href="passeio-de-barco-coletivo.html" class="py-2 d-block">Passeio Coletivo</a></li>
+                <li><a href="passeio-de-barco-taxi.html" class="py-2 d-block">Barco Taxi</a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Alguma dúvida?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+55 (22)99852-7317</span></a></li>
+	               <li><span class="icon icon-instagram"></span><span class="text"><a target="_blank" href="https://www.instagram.com/valhallatourarraial/?igsh=ZWVjbWMyd3p0Mmw%3D#">Valhalla Journey</a></span> </li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Valhalla Journey
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
 </html>
