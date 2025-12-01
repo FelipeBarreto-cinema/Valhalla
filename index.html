@@ -880,6 +880,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+document.querySelectorAll('.owl-carousel').forEach(car => {
+  car.addEventListener('touchmove', e => {
+    e.stopPropagation();
+  }, { passive: true });
+});
+</script>
 
 
     
