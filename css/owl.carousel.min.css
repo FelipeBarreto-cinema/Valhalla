@@ -170,3 +170,11 @@
 .owl-carousel .owl-item img.owl-lazy {
   -webkit-transform-styl
 }
+.owl-carousel .owl-stage {
+  touch-action: pan-y !important;
+  -ms-touch-action: pan-y !important;
+}
+
+.owl-carousel {
+  touch-action: pan-y !important;
+}
