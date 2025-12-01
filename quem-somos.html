@@ -295,6 +295,50 @@ Nosso propósito não é apenas oferecer um passeio de barco. É conduzir o viaj
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+    	  <style>
+
+		  .owl-carousel,
+.owl-stage,
+.owl-stage-outer {
+  touch-action: pan-y !important;
+  -ms-touch-action: pan-y !important; /* Edge antigo */
+}
+
+	  </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  
+  var el = $('.home-slider');
+
+  // Destrói qualquer instância existente
+  if (el.hasClass('owl-loaded')) {
+    el.trigger('destroy.owl.carousel');
+  }
+
+  // Remove wrappers que o Owl cria
+  el.find('.owl-stage-outer').children().unwrap();
+
+  // Recria o carousel com suas configs
+  el.owlCarousel({
+    items: 1,
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    nav: false,
+    dots: false,
+    autoplay: false
+  });
+
+});
+</script>
+
+<script>
+document.querySelectorAll('.owl-carousel').forEach(car => {
+  car.addEventListener('touchmove', e => {
+    e.stopPropagation();
+  }, { passive: true });
+});
+</script>
   </body>
 </html>
