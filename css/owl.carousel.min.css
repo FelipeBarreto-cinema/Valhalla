@@ -107,12 +107,12 @@
 
 /* Modificação aqui — permitir scroll vertical no mobile mesmo com .owl-drag */
 .owl-carousel.owl-drag .owl-item {
-  -ms-touch-action: pan-y !important;
+ /* -ms-touch-action: pan-y !important;
   touch-action: pan-y !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none;*/
 }
 
 .owl-carousel.owl-grab {
