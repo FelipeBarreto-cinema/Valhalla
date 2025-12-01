@@ -44,6 +44,25 @@ function googleTranslateElementInit() {
 <script type="text/javascript"
 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       
+      <style>
+      /* Oculta o seletor do Google */
+#google_translate_element {
+    display: none !important;
+}
+
+/* Oculta o banner do Google */
+.goog-logo-link,
+.goog-te-gadget span,
+.goog-te-banner-frame,
+.skiptranslate {
+    display: none !important;
+}
+
+/* Evita que o Google bagunce o layout */
+body {
+    top: 0 !important;
+}
+      </style>
       
   </head>
   <body>
