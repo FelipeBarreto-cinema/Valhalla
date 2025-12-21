@@ -15,13 +15,10 @@
   </script>
 
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; height: 100vh; }
+    body { margin: 0; font-family: Arial, sans-serif; height: 100vh; display: flex; flex-direction: column; }
     header { background-color: #1a1a1a; color: white; padding: 15px; text-align: center; }
-    .controls { background-color: #f4f4f4; padding: 10px; display: flex; justify-content: center; gap: 10px; }
-    button { padding: 8px 12px; border: none; background-color: #1a1a1a; color: white; cursor: pointer; border-radius: 4px; }
-    button:hover { background-color: #333; }
-    #pdf-render { flex: 1; overflow: auto; text-align: center; background: #ccc; }
-    canvas { margin: 10px auto; border: 1px solid #999; }
+    #pdf-container { flex: 1; }
+    iframe { width: 100%; height: 100%; border: none; }
   </style>
 </head>
 <body>
@@ -36,57 +33,10 @@
     <h1>Valhalla Journey - Parceria</h1>
   </header>
 
-  <div class="controls">
-    <button id="prev-page">Anterior</button>
-    <button id="next-page">Próxima</button>
-    <span>Página: <span id="page-num"></span> / <span id="page-count"></span></span>
-    <button id="zoom-in">Zoom +</button>
-    <button id="zoom-out">Zoom -</button>
-    <button id="download">Download PDF</button>
+  <div id="pdf-container">
+    <iframe 
+      src="https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf?utm_source=email&utm_medium=parceria&utm_campaign=2025">
+    </iframe>
   </div>
-
-  <div id="pdf-render"></div>
-
-  <!-- PDF.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.12.313/pdf.min.js"></script>
-  <script>
-    const url = 'https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf?utm_source=email&utm_medium=parceria&utm_campaign=2025';
-    let pdfDoc = null, pageNum = 1, pageIsRendering = false, pageNumIsPending = null;
-    let scale = 1.2;
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    document.getElementById('pdf-render').appendChild(canvas);
-
-    const renderPage = num => {
-      pageIsRendering = true;
-      pdfDoc.getPage(num).then(page => {
-        const viewport = page.getViewport({ scale });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        page.render({ canvasContext: ctx, viewport }).promise.then(() => {
-          pageIsRendering = false;
-          if (pageNumIsPending !== null) { renderPage(pageNumIsPending); pageNumIsPending = null; }
-        });
-        document.getElementById('page-num').textContent = num;
-      });
-    };
-
-    const queueRenderPage = num => pageIsRendering ? pageNumIsPending = num : renderPage(num);
-
-    const showPrevPage = () => { if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); };
-    const showNextPage = () => { if (pageNum >= pdfDoc.numPages) return; pageNum++; queueRenderPage(pageNum); };
-
-    pdfjsLib.getDocument(url).promise.then(pdf => {
-      pdfDoc = pdf;
-      document.getElementById('page-count').textContent = pdf.numPages;
-      renderPage(pageNum);
-    });
-
-    document.getElementById('prev-page').addEventListener('click', showPrevPage);
-    document.getElementById('next-page').addEventListener('click', showNextPage);
-    document.getElementById('zoom-in').addEventListener('click', () => { scale += 0.2; queueRenderPage(pageNum); });
-    document.getElementById('zoom-out').addEventListener('click', () => { scale = Math.max(0.2, scale - 0.2); queueRenderPage(pageNum); });
-    document.getElementById('download').addEventListener('click', () => { window.open(url, '_blank'); });
-  </script>
 </body>
 </html>
