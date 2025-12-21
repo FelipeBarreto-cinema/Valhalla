@@ -1,119 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTWQ7TMZQX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valhalla Journey - Parceria</title>
 
-  gtag('config', 'G-RTWQ7TMZQX');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valhalla Journey - Parceria</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        header {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .controls {
-            background-color: #f4f4f4;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        button {
-            padding: 8px 12px;
-            border: none;
-            background-color: #1a1a1a;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-        button:hover {
-            background-color: #333;
-        }
-        #pdf-container {
-            flex: 1;
-            width: 100%;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTWQ7TMZQX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RTWQ7TMZQX');
+  </script>
+
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; height: 100vh; }
+    header { background-color: #1a1a1a; color: white; padding: 15px; text-align: center; }
+    .controls { background-color: #f4f4f4; padding: 10px; display: flex; justify-content: center; gap: 10px; }
+    button { padding: 8px 12px; border: none; background-color: #1a1a1a; color: white; cursor: pointer; border-radius: 4px; }
+    button:hover { background-color: #333; }
+    #pdf-render { flex: 1; overflow: auto; text-align: center; background: #ccc; }
+    canvas { margin: 10px auto; border: 1px solid #999; }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3MSTG3T"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3MSTG3T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <div class="controls">
-        <button onclick="zoomIn()">Zoom +</button>
-        <button onclick="zoomOut()">Zoom -</button>
-        <button onclick="resetZoom()">Reset</button>
-        <button onclick="downloadPDF()">Download PDF</button>
-        <button onclick="toggleFullScreen()">Tela Cheia</button>
-    </div>
+  <header>
+    <h1>Valhalla Journey - Parceria</h1>
+  </header>
 
-    <div id="pdf-container">
-        <iframe id="pdfFrame" src="https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf?utm_source=email&utm_medium=parceria&utm_campaign=2025"></iframe>
-    </div>
+  <div class="controls">
+    <button id="prev-page">Anterior</button>
+    <button id="next-page">Próxima</button>
+    <span>Página: <span id="page-num"></span> / <span id="page-count"></span></span>
+    <button id="zoom-in">Zoom +</button>
+    <button id="zoom-out">Zoom -</button>
+    <button id="download">Download PDF</button>
+  </div>
 
-    <script>
-        const iframe = document.getElementById('pdfFrame');
-        let scale = 1;
+  <div id="pdf-render"></div>
 
-        function zoomIn() {
-            scale += 0.1;
-            iframe.style.transform = `scale(${scale})`;
-            iframe.style.transformOrigin = 'top left';
-        }
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.12.313/pdf.min.js"></script>
+  <script>
+    const url = 'https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf?utm_source=email&utm_medium=parceria&utm_campaign=2025';
+    let pdfDoc = null, pageNum = 1, pageIsRendering = false, pageNumIsPending = null;
+    let scale = 1.2;
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    document.getElementById('pdf-render').appendChild(canvas);
 
-        function zoomOut() {
-            scale = Math.max(0.1, scale - 0.1);
-            iframe.style.transform = `scale(${scale})`;
-            iframe.style.transformOrigin = 'top left';
-        }
+    const renderPage = num => {
+      pageIsRendering = true;
+      pdfDoc.getPage(num).then(page => {
+        const viewport = page.getViewport({ scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        page.render({ canvasContext: ctx, viewport }).promise.then(() => {
+          pageIsRendering = false;
+          if (pageNumIsPending !== null) { renderPage(pageNumIsPending); pageNumIsPending = null; }
+        });
+        document.getElementById('page-num').textContent = num;
+      });
+    };
 
-        function resetZoom() {
-            scale = 1;
-            iframe.style.transform = `scale(${scale})`;
-            iframe.style.transformOrigin = 'top left';
-        }
+    const queueRenderPage = num => pageIsRendering ? pageNumIsPending = num : renderPage(num);
 
-        function downloadPDF() {
-            const link = document.createElement('a');
-            link.href = iframe.src;
-            link.download = 'Valhalla-Journey-Parceria.pdf';
-            link.click();
-        }
+    const showPrevPage = () => { if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); };
+    const showNextPage = () => { if (pageNum >= pdfDoc.numPages) return; pageNum++; queueRenderPage(pageNum); };
 
-        function toggleFullScreen() {
-            const elem = document.getElementById('pdf-container');
-            if (!document.fullscreenElement) {
-                elem.requestFullscreen().catch(err => {
-                    alert(`Erro ao entrar em tela cheia: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-    </script>
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+      pdfDoc = pdf;
+      document.getElementById('page-count').textContent = pdf.numPages;
+      renderPage(pageNum);
+    });
+
+    document.getElementById('prev-page').addEventListener('click', showPrevPage);
+    document.getElementById('next-page').addEventListener('click', showNextPage);
+    document.getElementById('zoom-in').addEventListener('click', () => { scale += 0.2; queueRenderPage(pageNum); });
+    document.getElementById('zoom-out').addEventListener('click', () => { scale = Math.max(0.2, scale - 0.2); queueRenderPage(pageNum); });
+    document.getElementById('download').addEventListener('click', () => { window.open(url, '_blank'); });
+  </script>
 </body>
 </html>
