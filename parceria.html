@@ -59,36 +59,39 @@
       font-size: 15px;
     }
 
-    /* iOS / Gmail detect */
-    @supports (-webkit-touch-callout: none) {
-      iframe {
-        display: none;
-      }
-      .mobile-fallback {
-        display: block;
-      }
-    }
+ .mobile-fallback {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-fallback {
+    display: block;
+  }
+}
   </style>
 </head>
 
 <body>
   <div class="wrapper">
 
-    <div class="pdf-container">
-          <iframe src="https://www.valhallatourarraial.com.br/pdfjs/web/viewer.html?file=https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf&zoom=page-fit&navpanes=0&toolbar=0" allowfullscreen></iframe>
+  <div class="pdf-container">
+  <iframe
+    src="https://www.valhallatourarraial.com.br/pdfjs/web/viewer.html?file=https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf&zoom=page-fit&navpanes=0&toolbar=0"
+    allowfullscreen>
+  </iframe>
+</div>
 
-    </div>
+<div class="mobile-fallback">
+  <a href="https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf"
+     target="_blank" rel="noopener">
+    Abrir apresentação em tela cheia
+  </a>
+</div>
 
-    <!-- Fallback seguro para celular -->
-    <div class="mobile-fallback">
-      <a href="https://www.valhallatourarraial.com.br/Valhalla-Journey-Parceria.pdf?utm_source=email&utm_medium=parceria&utm_campaign=2025"
-         target="_blank" rel="noopener">
-        Abrir apresentação em tela cheia
-      </a>
-    </div>
 
   </div>
 </body>
 </html>
+
 
 
